@@ -226,7 +226,7 @@ function findWord(){
 }
 
 function SearchBg(){
-    fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=zebu`)
+    fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=${findWord()}`)
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `URL(${data.urls.raw})`
