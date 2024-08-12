@@ -1,11 +1,8 @@
 const moment = new Date()
 const min =  moment.getMinutes()
 const hour = moment.getHours()
-const time = moment.toLocaleString('en-us', {timeStyle:'short'}) 
+const time = moment.toLocaleString('fr-fr', {timeStyle:'short'}) 
 
-if(navigator.language != 'en'){
-    time = moment.toLocaleString('fr-fr', {timeStyle:'short'})
-} 
 function ToMgTime(){
     if(hour === 0 && min <= 30){
 
@@ -225,8 +222,8 @@ SearchBg()
 //     return key
 // }
 
-function SearchBg(){
-    fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=madagascar`)
+async function SearchBg(){
+   await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=madagascar`)
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `URL(${data.urls.regular})`
