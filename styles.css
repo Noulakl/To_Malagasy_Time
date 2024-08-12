@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: 0 .187rem 10px #242424;
+}
+html,
+body{
+    margin: 0;
+    background-image: URL('https://images.unsplash.com/photo-1660219464577-ab4886dacf98?ixid=M3w2NDI5Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjM0NzA2NTB8&ixlib=rb-4.0.3');
+    background: no-repeat center center fixed; 
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+}
+
+
+/* Main page */
+header{
+    display: flex;
+    justify-content: end;
+    padding: 0.625rem;
+    gap: 2.5rem;
+    position: fixed;
+    right: 0;
+    backdrop-filter:blur(10px);
+    width: 100%;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+/* Izy rehetra */
+section.list{
+    height: 100vh;
+    width: 90vw;
+    margin-top:10rem;
+}
+div.list-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .125rem solid whitesmoke;
+    padding-bottom: .5rem;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+div.time{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .5em;
+    border-bottom: solid .125rem #DBD9D9;
+    margin-top: 2em;
+}
+/* typo */
+/* Main page */
+header a{
+    font-size: .75rem;
+    text-decoration: none;
+}
+a:hover{
+    border-bottom: .125rem solid whitesmoke;
+}
+section h1{
+    font-size:5rem ;
+}
+section h3{
+    font-size: 1rem;  /*12px*/
+    margin-top: 1.666em;
+    
+}
+section h2,
+div.list-header h1,
+div.time-list h1{
+    text-shadow: 0 0 2px #242424 ;
+    font-size: 1.25rem;
+}
