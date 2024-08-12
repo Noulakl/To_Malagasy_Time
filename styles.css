@@ -4,11 +4,12 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     text-shadow: 0 .187rem 10px #242424;
+    user-select: none;
 }
 html,
 body{
     margin: 0;
-    background-image: URL('https://images.unsplash.com/photo-1660219464577-ab4886dacf98?ixid=M3w2NDI5Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjM0NzA2NTB8&ixlib=rb-4.0.3');
+    background-image: URL('./photo-1484506097116-1bcba4fa7568.jpg');
     background: no-repeat center center fixed; 
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -61,7 +62,7 @@ div.time{
 /* typo */
 /* Main page */
 header a{
-    font-size: .75rem;
+    font-size: 1rem;
     text-decoration: none;
 }
 a:hover{

@@ -199,43 +199,44 @@ setInterval(()=>{
 SearchBg()
 
 // rendering relevant background images
-function findWord(){
-    let key = ''
-    if(hour <= 3 ){
-        key = 'night'
-    } else if(hour >= 4 && hour < 6){
-        key = 'dawn'
-    } else if(hour >=6 && hour < 11){
-        key = 'earlymorning'
-    } else if(hour === 9){
-        key ='zebu'
-    } else if(hour>= 10 && hour < 12 ){
-        key = 'morning'
-    } else if (hour > 12 && hour < 18){
-        key = 'afternoon'
-    } else if( hour === 16 && min >= 0 || hour === 17){
-        key = 'zebu'
-    } else if(hour > 18 && hour < 20){
-        key = 'sunset'
-    } else if(hour > 20 && hour < 21){
-        key = 'evning'
-    } else if( hour > 21 ){
-        key = 'night'
-    }
-    return key
-}
+// function findWord(){
+//     let key = ''
+//     if(hour <= 3 ){
+//         key = 'night'
+//     } else if(hour >= 4 && hour < 6){
+//         key = 'dawn'
+//     } else if(hour >=6 && hour < 11){
+//         key = 'earlymorning'
+//     } else if(hour === 9){
+//         key ='zebu'
+//     } else if(hour>= 10 && hour < 12 ){
+//         key = 'morning'
+//     } else if (hour > 12 && hour < 18){
+//         key = 'afternoon'
+//     } else if( hour === 16 && min >= 0 || hour === 17){
+//         key = 'zebu'
+//     } else if(hour > 18 && hour < 20){
+//         key = 'sunset'
+//     } else if(hour > 20 && hour < 21){
+//         key = 'evning'
+//     } else if( hour > 21 ){
+//         key = 'night'
+//     }
+//     return key
+// }
 
 function SearchBg(){
-    fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=${findWord()} nature`)
+    fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=madagascar`)
     .then(res => res.json())
     .then(data => {
-        document.body.style.backgroundImage = `URL(${data.urls.raw})`
+        document.body.style.backgroundImage = `URL(${data.urls.regular})`
         console.log(data.urls.raw)
+        console.log(data)
     })
     .catch(err =>{
         console.error(err)
         console.log('Oops, failed to fetch background Image')
-        document.body.style.backgroundImage = `URL('https://images.unsplash.com/photo-1562808135-972c1c7f2a70?ixid=M3w2NDI5Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjM0NjY5ODl8&ixlib=rb-4.0.3')`
+        document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
 
     })
 }

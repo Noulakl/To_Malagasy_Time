@@ -14,7 +14,7 @@ fetch('./times.json')
 
     })
 
-    fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=madagascar`)
+    fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&orientation=landscape&query=madagascar`)
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `URL(${data.urls.raw})`
@@ -22,6 +22,6 @@ fetch('./times.json')
     .catch(err =>{
         console.error(err)
         console.log('Oops, failed to fetch background Image')
-        document.body.style.backgroundImage = `URL('https://images.unsplash.com/photo-1562808135-972c1c7f2a70?ixid=M3w2NDI5Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjM0NjY5ODl8&ixlib=rb-4.0.3')`
+        document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
 
     })
