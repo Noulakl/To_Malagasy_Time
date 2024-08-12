@@ -13,7 +13,9 @@ fetch('./times.json')
         });
 
     })
-
+    
+renderBg()
+async function renderBg(){
     await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&orientation=landscape&query=madagascar`)
     .then(res => res.json())
     .then(data => {
@@ -25,3 +27,4 @@ fetch('./times.json')
         document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
 
     })
+}
