@@ -193,7 +193,6 @@ setInterval(()=>{
     document.getElementById('current-time').textContent = time
     document.getElementById('fuzzy-ntaolo-time').textContent = ToMgTime()
 }, 1000)
-SearchBg()
 
 // rendering relevant background images
 // function findWord(){
@@ -222,19 +221,23 @@ SearchBg()
 //     return key
 // }
 
-async function SearchBg(){
-   await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=madagascar`)
-    .then(res => res.json())
-    .then(data => {
-        document.body.style.backgroundImage = `URL(${data.urls.regular})`
-        console.log(data.urls.raw)
-        console.log(data)
-    })
-    .catch(err =>{
-        console.error(err)
-        console.log('Oops, failed to fetch background Image')
-        document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
-
-    })
+try{
+const res = await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=Madagascar`)
+if(!res.ok){
+    throw  new Error
 }
+const data= await res.json()
+console.log(data)
+document.body.style.backgroundImage = `URL(${data.urls.regular})`
+}
+catch(err){
+    console.error(err)
+    console.log('Oops, failed to fetch background Image')
+    document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
+
+}
+
+
+
+
 

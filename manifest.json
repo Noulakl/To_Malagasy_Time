@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Nola's Malagasy Dashboard",
+    "version": "1.0.0",
+    "description": "Just for practicing async JS, while emerging Malagasy culture",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "action":{
+        "default_icon": {
+            "16": "./PNG/icon.png",
+            "32": "./PNG/icon.png"
+          }
+    }
+}
+
+
+
