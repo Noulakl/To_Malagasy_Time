@@ -1,8 +1,6 @@
 const moment = new Date()
 const min =  moment.getMinutes()
 const hour = moment.getHours()
-const time = moment.toLocaleString('fr-fr', {timeStyle:'short'}) 
-
 function ToMgTime(){
     if(hour === 0 && min <= 30){
 
@@ -185,41 +183,14 @@ function ToMgTime(){
 
         return`Mamanton'alina`
     }
-
-
 }
 
 setInterval(()=>{
+    const moment = new Date()
+    const time = moment.toLocaleString('fr-fr', {timeStyle:'short'}) 
     document.getElementById('current-time').textContent = time
     document.getElementById('fuzzy-ntaolo-time').textContent = ToMgTime()
 }, 1000)
-
-// rendering relevant background images
-// function findWord(){
-//     let key = ''
-//     if(hour <= 3 ){
-//         key = 'night'
-//     } else if(hour >= 4 && hour < 6){
-//         key = 'dawn'
-//     } else if(hour >=6 && hour < 11){
-//         key = 'earlymorning'
-//     } else if(hour === 9){
-//         key ='zebu'
-//     } else if(hour>= 10 && hour < 12 ){
-//         key = 'morning'
-//     } else if (hour > 12 && hour < 18){
-//         key = 'afternoon'
-//     } else if( hour === 16 && min >= 0 || hour === 17){
-//         key = 'zebu'
-//     } else if(hour > 18 && hour < 20){
-//         key = 'sunset'
-//     } else if(hour > 20 && hour < 21){
-//         key = 'evning'
-//     } else if( hour > 21 ){
-//         key = 'night'
-//     }
-//     return key
-// }
 
 try{
 const res = await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=Madagascar`)
@@ -227,14 +198,11 @@ if(!res.ok){
     throw  new Error
 }
 const data= await res.json()
-console.log(data)
 document.body.style.backgroundImage = `URL(${data.urls.regular})`
 }
 catch(err){
-    console.error(err)
-    console.log('Oops, failed to fetch background Image')
+    console.log('Oops, failed to fetch background Image. Please connect to the Internet')
     document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
-
 }
 
 
