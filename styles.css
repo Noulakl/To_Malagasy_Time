@@ -37,6 +37,11 @@ main{
     text-align: center;
     height: 100vh;
 }
+footer{
+    position: fixed;
+    bottom: .5em;
+    left: .5em;
+}
 /* Izy rehetra */
 section.list{
     height: 100vh;
@@ -58,6 +63,7 @@ div.time{
     border-bottom: solid .125rem #DBD9D9;
     margin-top: 2em;
 }
+
 /* typo */
 /* Main page */
 header a{
@@ -88,4 +94,10 @@ div.time-list h1{
     font-size: 1.3rem;
     text-shadow: .1em .1rem .1em #242424 ;
 
+}
+footer p#picture-description::first-letter{
+    text-transform: uppercase;
+}
+footer p:nth-child(2) {
+    margin-top: .2em;
 }

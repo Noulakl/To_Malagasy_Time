@@ -198,7 +198,13 @@ if(!res.ok){
     throw  new Error
 }
 const data= await res.json()
-document.body.style.backgroundImage = `URL(${data.urls.regular})`
+const imageLink = data.urls.full
+const photographer = data.user.name
+const description =  data.alt_description
+const location = data.location.name
+document.body.style.backgroundImage = `URL(${imageLink})`
+document.getElementById('picture-description').textContent = description
+document.getElementById('photographer-and-location').textContent = `By ${photographer}, ${location}`
 }
 catch(err){
     console.log('Oops, failed to fetch background Image. Please connect to the Internet')
