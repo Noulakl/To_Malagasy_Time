@@ -191,7 +191,7 @@ setInterval(()=>{
     document.getElementById('current-time').textContent = time
     document.getElementById('fuzzy-ntaolo-time').textContent = ToMgTime()
 }, 1000)
-
+// ftching background Images
 try{
 const res = await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=Madagascar`)
 if(!res.ok){
@@ -210,6 +210,17 @@ catch(err){
     console.log('Oops, failed to fetch background Image. Please connect to the Internet')
     document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
 }
+// fetching the weather
+// try{
+// const res = await fetch('http://api.accuweather.com/locations/search?q=40.79,77.86&apikey=bzfPG7OMeLSAHXiM4nGmBHpMf14Y1qxC')
+// const data = await res.json()
+// console.log(data)
+// } catch (err){
+
+// }
+navigator.geolocation.getCurrentPosition(position => {
+    console.log(position.coords.latitude, position.coords.longitude)})
+
 
 
 
