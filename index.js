@@ -1,7 +1,7 @@
-const moment = new Date()
-const min =  moment.getMinutes()
-const hour = moment.getHours()
 function ToMgTime(){
+    const moment = new Date()
+    const min =  moment.getMinutes()
+    const hour = moment.getHours()
     if(hour === 0 && min <= 30){
 
         return `Misasakalina`
