@@ -2,6 +2,7 @@ fetch('./times.json')
     .then(res => res.json())
     .then (data => {
         const timeArr = data.time
+        console.table(timeArr)
         timeArr.forEach(time => {
             const {ora,Ntaolo} = time
             document.getElementById('time-list').innerHTML +=`
