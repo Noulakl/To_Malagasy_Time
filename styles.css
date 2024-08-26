@@ -84,13 +84,14 @@ section h2{
 }
 
 div.list-header h1,
-div.time-list h1,
-p#picture-description,
-footer p:nth-child(2)
+div.time-list h1
 {
     font-size: 1.3rem;
     /* text-shadow: .1em .1rem .1em #242424 ; */
 
+}
+footer p{
+    font-size: .9rem;
 }
 footer p#picture-description::first-letter{
     text-transform: uppercase;
