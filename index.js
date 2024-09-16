@@ -187,9 +187,11 @@ function ToMgTime(){
 
 setInterval(()=>{
     const moment = new Date()
+    const year = moment.getFullYear()
     const time = moment.toLocaleString('fr-fr', {timeStyle:'short'}) 
     document.getElementById('current-time').textContent = time
     document.getElementById('fuzzy-ntaolo-time').textContent = ToMgTime()
+    document.getElementById('copy-rights').textContent = `© ${year} by Nola Kely`
 }, 1000)
 // ftching background Images
 try{
@@ -218,11 +220,5 @@ catch(err){
 // } catch (err){
 
 // }
-navigator.geolocation.getCurrentPosition(position => {
-    console.log(position.coords.latitude, position.coords.longitude)})
-
-
-
-
-
-
+// navigator.geolocation.getCurrentPosition(position => {
+//     console.log(position.coords.latitude, position.coords.longitude)})
