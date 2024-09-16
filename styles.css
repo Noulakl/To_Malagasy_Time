@@ -34,11 +34,11 @@ main{
 }
 footer{
     position: fixed;
-    bottom: 1em;
+    bottom: 2em;
     left: .5em;
     width: 100vw;
     display: flex;
-    align-items: center;
+    align-items: self-start;
     justify-content: space-between;
     padding: 0 .8em;
 }
@@ -98,6 +98,7 @@ div.time-list h1
 }
 footer p{
     font-size: .9rem;
+    max-width: 70vw;
 }
 footer p#picture-description::first-letter{
     text-transform: uppercase;
