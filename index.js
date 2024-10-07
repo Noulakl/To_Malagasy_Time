@@ -184,6 +184,7 @@ function ToMgTime(){
         return`Mamanton'alina`
     }
 }
+const bgImage = document.getElementById('bgKly')
 
 setInterval(()=>{
     const moment = new Date()
@@ -204,13 +205,14 @@ const imageLink = data.urls.full
 const photographer = data.user.name
 const description =  data.alt_description
 const location = data.location.name
-document.body.style.backgroundImage = `URL(${imageLink})`
+
+bgImage.style.backgroundImage = `URL(${imageLink})`
 document.getElementById('picture-description').textContent = description
 document.getElementById('photographer-and-location').textContent = `By ${photographer}, ${location}`
 }
 catch(err){
     console.log('Oops, failed to fetch background Image. Please connect to the Internet')
-    document.body.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
+    bgImage.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
 }
 // fetching the weather
 // try{
