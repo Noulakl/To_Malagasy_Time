@@ -1,14 +1,10 @@
-function ToMgTime(){
-    const moment = new Date()
-    const min =  moment.getMinutes()
-    const hour = moment.getHours()
+function ToMgTime(hour, min){
     if(hour === 0 && min <= 30){
 
         return `Misasakalina`
 
-    }
-    
-    else if(hour === 1 && min <= 30){
+    }     
+    else if(hour === 1 && min <= 30 || hour === 0 && min > 30){
 
         return`Mody mpamosavy`
     }
@@ -143,12 +139,12 @@ function ToMgTime(){
         return`Mody omby`
     }
     
-    else if(hour === 18 && min <= 30 ){
+    else if(hour === 18 && min < 29 ){
 
         return`Maty masoandro`
     }
     
-    else if(hour === 18 && min > 30){
+    else if(hour === 18 && min >= 30){
 
         return`Maizim-bavavilany tsy 
         ahita-mitsinjo, tsy ahita-tsoratr'omby`
@@ -185,15 +181,27 @@ function ToMgTime(){
     }
 }
 const bgImage = document.getElementById('bgKly')
-
+const currentTimeDisplay = document.getElementById('current-time')
+const fuzzyTimeDisplay = document.getElementById('fuzzy-ntaolo-time')
+const copywriteDisplay=document.getElementById('copy-rights')
+const alinaSaAndroDisplay= document.getElementById("androSaAlina")
 setInterval(()=>{
     const moment = new Date()
+    const hour = moment.getHours()
+    const min =  moment.getMinutes()
     const year = moment.getFullYear()
-    const time = moment.toLocaleString('fr-fr', {timeStyle:'short'}) 
-    document.getElementById('current-time').textContent = time
-    document.getElementById('fuzzy-ntaolo-time').textContent = ToMgTime()
-    document.getElementById('copy-rights').textContent = `© ${year} by Nola Kely`
+    const time = moment.toLocaleString('fr-fr', {timeStyle:'short'})
+    currentTimeDisplay.textContent = time
+    fuzzyTimeDisplay.textContent = ToMgTime(hour, min)
+
+    hour >= 1 && hour <=11 ? alinaSaAndroDisplay.textContent = "Maraina" : 
+    hour >= 12 && hour <=16 ? alinaSaAndroDisplay.textContent = "Atoandro" :
+    hour >= 17 && hour <=19 ? alinaSaAndroDisplay.textContent = "Hariva" :
+    hour >= 20 || hour === 0 ? alinaSaAndroDisplay.textContent = "Alina" : null
+    
+    copywriteDisplay.textContent = `© ${year} App by Nola Kely`
 }, 1000)
+
 // ftching background Images
 try{
 const res = await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=Madagascar`)
@@ -204,7 +212,7 @@ const data= await res.json()
 const imageLink = data.urls.full
 const photographer = data.user.name
 const description =  data.alt_description
-const location = data.location.name
+// const location = data.location.name
 
 bgImage.style.backgroundImage = `URL(${imageLink})`
 document.getElementById('picture-description').textContent = description
@@ -224,3 +232,8 @@ catch(err){
 // }
 // navigator.geolocation.getCurrentPosition(position => {
 //     console.log(position.coords.latitude, position.coords.longitude)})
+// const star ="*"
+// for(let i = 1; i < 6 ; i++){
+//          console.log(`${star.repeat(i)}\n`)
+//     }
+
