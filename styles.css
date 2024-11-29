@@ -32,6 +32,12 @@ header{
     backdrop-filter:blur(10px);
     width: 100%;
 }
+section#hero-time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 main{
     display: flex;
     justify-content: center;
