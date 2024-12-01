@@ -190,7 +190,7 @@ setInterval(()=>{
     const hour = moment.getHours()
     const min =  moment.getMinutes()
     const year = moment.getFullYear()
-    const time = moment.toLocaleString('en-uk', {timeStyle:'short'}).replace(/AM|PM/,"")
+    const time = moment.toLocaleString('en-us', {timeStyle:'short'}).replace(/AM |PM/,"")
     currentTimeDisplay.textContent = time
     fuzzyTimeDisplay.textContent = ToMgTime(hour, min)
 
