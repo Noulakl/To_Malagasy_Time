@@ -212,7 +212,7 @@ const data= await res.json()
 const imageLink = data.urls.full
 const photographer = data.user.name
 const description =  data.alt_description
-// const location = data.location.name
+const location = data.location.name
 
 bgImage.style.backgroundImage = `URL(${imageLink})`
 document.getElementById('picture-description').textContent = description
