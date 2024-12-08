@@ -188,10 +188,10 @@ const alinaSaAndroDisplay= document.getElementById("androSaAlina")
 setInterval(()=>{
     const moment = new Date()
     const hour = moment.getHours()
-    const min =  moment.getMinutes()
-    const year = moment.getFullYear()
-    const time = moment.toLocaleString('en-us', {timeStyle:'short'}).replace(/AM |PM/,"")
-    currentTimeDisplay.textContent = time
+    const min = moment.getMinutes()
+    const formattedHour = hour % 12 === 0 ? 12 : hour % 12 
+    const formattedTime = `${formattedHour}:${min < 10 ? '0' + min : min}` 
+    currentTimeDisplay.textContent = formattedTime
     fuzzyTimeDisplay.textContent = ToMgTime(hour, min)
 
     hour >= 1 && hour <=11 ? alinaSaAndroDisplay.textContent = "Maraina" : 
@@ -202,7 +202,7 @@ setInterval(()=>{
     copywriteDisplay.textContent = `© ${year} App by Nola Kely`
 }, 1000)
 
-// ftching background Images
+// fetching background Images
 try{
 const res = await fetch(`https://api.unsplash.com/photos/random/?client_id=qQQKUM62z0GDpNtSb2o4gMFjg9gEjifKCHXmQxHp1g4&query=Madagascar`)
 if(!res.ok){
