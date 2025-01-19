@@ -188,6 +188,7 @@ const alinaSaAndroDisplay= document.getElementById("androSaAlina")
 setInterval(()=>{
     const moment = new Date()
     const hour = moment.getHours()
+    const year = moment.getFullYear()
     const min = moment.getMinutes()
     const formattedHour = hour % 12 === 0 ? 12 : hour % 12 
     const formattedTime = `${formattedHour}:${min < 10 ? '0' + min : min}` 
