@@ -223,18 +223,4 @@ catch(err){
     console.log('Oops, failed to fetch background Image. Please connect to the Internet')
     bgImage.style.backgroundImage = `URL('./photo-1484506097116-1bcba4fa7568.jpg')`
 }
-// fetching the weather
-// try{
-// const res = await fetch('http://api.accuweather.com/locations/search?q=40.79,77.86&apikey=bzfPG7OMeLSAHXiM4nGmBHpMf14Y1qxC')
-// const data = await res.json()
-// console.log(data)
-// } catch (err){
-
-// }
-// navigator.geolocation.getCurrentPosition(position => {
-//     console.log(position.coords.latitude, position.coords.longitude)})
-// const star ="*"
-// for(let i = 1; i < 6 ; i++){
-//          console.log(`${star.repeat(i)}\n`)
-//     }
 
